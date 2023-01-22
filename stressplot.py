@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-lat = list(map(float,open("latency/100,2,10","r").readline().split(",")))
+lat = list(map(float,open("latency/100,10,10","r").readline().split(",")))
 fig, ax = plt.subplots(2,2)
 sns.scatterplot(lat,ax=ax[0,0])
 sns.kdeplot(lat,ax=ax[0,1])

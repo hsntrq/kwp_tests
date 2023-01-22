@@ -25,8 +25,8 @@ def test(samples):
         time.sleep(1)            
 
 curr = round(time.time())
-keys = open("keys","r").readline().split(",")[:11]
-reqs = {key: [f"{key}&{tm(curr+i)}&{F}" for i in range(10*60)] for key in keys}
+keys = open("keys","r").readline().split(",")[:501]
+reqs = {key: [f"{key}&{tm(curr+i)}&{F}" for i in range(1*60)] for key in keys}
 # print(reqs)
 
 for node in reqs:
@@ -38,4 +38,4 @@ for t in Threads:
     t.join()
 
 # print(Latency)
-open("latency/10,10,10","w").write(",".join(map(str,Latency)))
+open("latency/100,10,10","w").write(",".join(map(str,Latency)))
